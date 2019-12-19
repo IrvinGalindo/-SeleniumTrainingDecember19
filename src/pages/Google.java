@@ -8,16 +8,16 @@ import utilities.Find;
 public class Google {
 	
 	public static WebElement txt_SearchBar() {
-		return Find.Element(LocatorType.NAME, "q");
+		return Find.element(LocatorType.NAME, "q");
 
 	}
 
 	public static WebElement btn_Search() {
-		return Find.Element(LocatorType.XPATH, "(//input[@name='btnK'])[1]");
+		return Find.element(LocatorType.XPATH, "(//input[@name='btnK'])[1]");
 	}
 	
 	public static WebElement lbl_FirstResult(String valueToVerify) {
-		return Find.Element(LocatorType.XPATH, "(//h3[contains(text(),'"+valueToVerify+"')])[1]");
+		return Find.element(LocatorType.XPATH, "(//h3[contains(text(),'"+valueToVerify+"')])[1]");
 	}
 }
 
