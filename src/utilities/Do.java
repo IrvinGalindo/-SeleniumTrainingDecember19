@@ -76,6 +76,7 @@ public class Do {
 
 	public static void action(Action action, Option option, int value, WebElement element) throws ActionException {
 		if (action == Action.SELECT) {
+			
 			Select combo = new Select(element);
 			switch (option) {
 			case BY_INDEX:
