@@ -2,9 +2,11 @@ package utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import enums.Action;
+import enums.MouseOption;
 import enums.Option;
 import exceptions.ActionException;
 
@@ -76,7 +78,7 @@ public class Do {
 
 	public static void action(Action action, Option option, int value, WebElement element) throws ActionException {
 		if (action == Action.SELECT) {
-			
+
 			Select combo = new Select(element);
 			switch (option) {
 			case BY_INDEX:
@@ -105,6 +107,23 @@ public class Do {
 			}
 		} else {
 			throw new ActionException("Invalid Action");
+		}
+	}
+
+	public static void action(Action action, MouseOption mouseOption, WebElement element) throws ActionException {
+		if (action == Action.MOUSE) {
+			switch (mouseOption) {
+			case MOUSE_OVER:
+				Actions actions = new Actions(driver);
+				actions.moveToElement(element).perform();
+				break;
+
+			default:
+				throw new ActionException("Invalid Option");
+			}
+
+		} else {
+			throw new ActionException("Invalid Option");
 		}
 	}
 

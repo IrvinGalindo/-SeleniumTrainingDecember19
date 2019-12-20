@@ -11,7 +11,7 @@ import enums.Browser;
 public class Driver {
 	public static WebDriver driver;
 	
-	public static void Open(Browser browser) {
+	public static void open(Browser browser) {
 		
 		switch (browser) {
 		case CHROME:
@@ -37,7 +37,7 @@ public class Driver {
 		
 	}
 	
-	public static void Close() {
+	public static void close() {
 		driver.quit();
 	}
 

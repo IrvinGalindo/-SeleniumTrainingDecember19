@@ -1,33 +1,24 @@
 package main;
 
-import org.openqa.selenium.NoSuchElementException;
 
-import com.gargoylesoftware.htmlunit.Cache;
-
-import enums.Action;
 import enums.Browser;
-import enums.LocatorType;
-import enums.Option;
-import exceptions.ActionException;
-import testCases.CreateAccountInAutomationPracticePage;
-import testCases.SearchHexawareInGoogle;
+import testCases.BuyAnEveningDress;
 import utilities.Case;
-import utilities.Do;
 import utilities.Driver;
-import utilities.Excel;
-import utilities.Find;
-import utilities.Wait;
+
 
 public class Main {
 	public static void main(String args[]) {
-		Driver.Open(Browser.CHROME);
+		Driver.open(Browser.CHROME);
 		try {
-		CreateAccountInAutomationPracticePage.execute();
+		BuyAnEveningDress.execute();
 		}catch (Exception e) {
+			System.out.println(e.getMessage());
 			Case.status = false;
 			Case.printResult();
 			return;
 		}
+		Driver.close();
 		/*
 		 * Excel.read("./files/searchInGoogle.xlsx"); try {
 		 * SearchHexawareInGoogle.iteration(); Driver.Close(); } catch (ActionException

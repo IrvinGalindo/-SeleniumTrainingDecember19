@@ -8,6 +8,6 @@ import utilities.Find;
 public class AutomationPractice_MyAccount {
 	
 	public static WebElement lbl_MyAccount() {
-		return Find.element(LocatorType.XPATH, "//span[contains(text(),'Irvin')]");
+		return Find.element(LocatorType.XPATH, "//span[contains(text(),'Raul')]");
 	}
 }
