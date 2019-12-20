@@ -14,7 +14,7 @@ public class Find {
 	public static WebDriver driver = Driver.driver;
 	public static WebElement element = null;
 	
-	public static WebElement Element(LocatorType locator, String value) throws NoSuchElementException{
+	public static WebElement element(LocatorType locator, String value) throws NoSuchElementException{
 		switch(locator) {
 		case ID:
 			element = driver.findElement(By.id(value));
@@ -43,7 +43,7 @@ public class Find {
 		return element;
 	}
 	
-	public static List<WebElement> Elements(LocatorType locator, String value) {
+	public static List<WebElement> elements(LocatorType locator, String value) {
 		 List<WebElement> elements = null;
 		switch(locator) {
 		case ID:

@@ -11,4 +11,5 @@ public enum Action {
 		PRESSKEY,
 		VERIFY_IF_EXIST,
 		SELECT,
+		MOUSE,
 }
