@@ -26,12 +26,9 @@ public class SearchHexawareInGoogle {
 	}
 	
 	public static void iteration() throws ActionException {
-		
-		for(int i = 0; i < Excel.tableList.size(); i++) {
-			
+		for(int i = 0; i < Excel.tableList.size(); i++) {	
 			execute(Excel.tableList.get(i).getValueToBeSearched());
 		}
-		
 	}
 
 }

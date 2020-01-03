@@ -18,6 +18,7 @@ public class Main {
 			Case.printResult();
 			return;
 		}
+		Case.printResult();
 		Driver.close();
 		/*
 		 * Excel.read("./files/searchInGoogle.xlsx"); try {
