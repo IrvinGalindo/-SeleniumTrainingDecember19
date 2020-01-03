@@ -1,7 +1,6 @@
 package testCases;
 
 import components.Cmp_CreateAnAccount;
-import components.Cpm_test;
 import enums.Action;
 import enums.MouseOption;
 import exceptions.ActionException;
