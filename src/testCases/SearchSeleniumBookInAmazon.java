@@ -1,5 +1,7 @@
 package testCases;
 
+import java.io.IOException;
+
 import enums.Action;
 import enums.Option;
 import exceptions.ActionException;
@@ -9,7 +11,7 @@ import utilities.Wait;
 
 public class SearchSeleniumBookInAmazon {
 	
-	public static void execute() throws ActionException {
+	public static void execute() throws ActionException, IOException {
 		
 		Do.action(Action.NAVIGATE, "www.amazon.com");
 		Do.action(Action.CLICK, Amazon.clickBtn_All());

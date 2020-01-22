@@ -1,6 +1,9 @@
 package testCases;
 
 import pages.Google;
+
+import java.io.IOException;
+
 import enums.Action;
 import enums.Expected;
 import exceptions.ActionException;
@@ -10,7 +13,7 @@ import utilities.Wait;
 
 public class SearchHexawareInGoogle {
 
-	public static void execute(String valueToSearch) throws ActionException {
+	public static void execute(String valueToSearch) throws ActionException, IOException {
 		
 		Do.action(Action.NAVIGATE, "www.google.com");
 		Wait.implicit(5);
@@ -25,7 +28,7 @@ public class SearchHexawareInGoogle {
 		
 	}
 	
-	public static void iteration() throws ActionException {
+	public static void iteration() throws ActionException, IOException {
 		for(int i = 0; i < Excel.tableList.size(); i++) {	
 			execute(Excel.tableList.get(i).getValueToBeSearched());
 		}
