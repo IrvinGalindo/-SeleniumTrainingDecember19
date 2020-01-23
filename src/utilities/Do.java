@@ -87,15 +87,20 @@ public class Do {
 				return false;
 			}
 		case VERIFY_IF_EXIST:
-			Do.action(Action.TAKESCREENSHOT);
-			return element != null ? true : false;
+			if (element != null) {
+				Script.highlight(element);
+				Script.withoutHighlight(element);
+				return true;
+			}
+			return false;
 
 		default:
 			throw new ActionException("Invalid Action");
 		}
 	}
 
-	public static void action(Action action, Option option, int value, WebElement element) throws ActionException, IOException {
+	public static void action(Action action, Option option, int value, WebElement element)
+			throws ActionException, IOException {
 		if (action == Action.SELECT) {
 
 			Select combo = new Select(element);
@@ -112,7 +117,8 @@ public class Do {
 		}
 	}
 
-	public static void action(Action action, Option option, String value, WebElement element) throws ActionException, IOException {
+	public static void action(Action action, Option option, String value, WebElement element)
+			throws ActionException, IOException {
 		if (action == Action.SELECT) {
 			Select combo = new Select(element);
 			switch (option) {
@@ -132,7 +138,8 @@ public class Do {
 		}
 	}
 
-	public static void action(Action action, MouseOption mouseOption, WebElement element) throws ActionException, IOException {
+	public static void action(Action action, MouseOption mouseOption, WebElement element)
+			throws ActionException, IOException {
 		if (action == Action.MOUSE) {
 			switch (mouseOption) {
 			case MOUSE_OVER:
