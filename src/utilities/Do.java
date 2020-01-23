@@ -65,8 +65,8 @@ public class Do {
 	public static void action(Action action, String value, WebElement element) throws ActionException, IOException {
 		switch (action) {
 		case TYPE:
-			Script.highlight(element);
 			element.sendKeys(value);
+			Script.highlight(element);
 			Script.withoutHighlight(element);
 			break;
 		default:
