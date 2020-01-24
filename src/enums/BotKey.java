@@ -8,6 +8,5 @@ public enum BotKey {
 	ESCAPE,
 	PAGE_DOWN,
 	PAGE_UP,
-	PRINT_SCREEN,
 	
 }

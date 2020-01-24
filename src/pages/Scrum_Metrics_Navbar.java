@@ -16,5 +16,12 @@ public class Scrum_Metrics_Navbar {
 		return Find.element(LocatorType.CSSSELECTOR, "button[ng-reflect-router-link='/start/login']");
 	}
 	
+	public static WebElement menu_Register() {
+		return Find.element(LocatorType.XPATH, "(//button[@ng-reflect-router-link='/start/register'])[2]");
+	}
+	
+	public static WebElement menu_Docs() {
+		return Find.element(LocatorType.CSSSELECTOR, "button[ng-reflect-router-link='/start/documentation']");
+	}
 	
 }

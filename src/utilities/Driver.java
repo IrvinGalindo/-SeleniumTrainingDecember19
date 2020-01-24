@@ -7,36 +7,37 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import enums.Browser;
 
-
 public class Driver {
 	public static WebDriver driver;
-	
+
 	public static void open(Browser browser) {
-		
+
 		switch (browser) {
 		case CHROME:
 			System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
 			driver = new ChromeDriver();
 			break;
-			
+
 		case FIREFOX:
 			System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver.exe");
 			driver = new FirefoxDriver();
 			break;
-			
+
 		case IE:
 			System.setProperty("webdriver.ie.driver", "./drivers/IEDriverServer.exe");
 			driver = new InternetExplorerDriver();
 			break;
-			
+
 		default:
 			System.setProperty("webdriver.ie.driver", "./drivers/IEDriverServer.exe");
 			driver = new InternetExplorerDriver();
 			break;
 		}
-		
+
+		driver.manage().window().maximize();
+
 	}
-	
+
 	public static void close() {
 		driver.quit();
 	}

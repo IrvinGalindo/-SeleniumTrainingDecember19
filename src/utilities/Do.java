@@ -1,9 +1,11 @@
 package utilities;
 
+import java.awt.AWTException;
 import java.io.File;
 import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -12,6 +14,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import enums.Action;
+import enums.Alerts;
 import enums.MouseOption;
 import enums.Option;
 import exceptions.ActionException;
@@ -92,11 +95,27 @@ public class Do {
 				Script.withoutHighlight(element);
 				return true;
 			}
-			return false;
 
 		default:
 			throw new ActionException("Invalid Action");
 		}
+	}
+
+	public static void action(Alerts alert) throws ActionException, IOException, AWTException {
+		Alert alertWindow = driver.switchTo().alert();
+		switch (alert) {
+		case CLICK_ACCEPT:
+			Press.takeScreenShot();
+			alertWindow.accept();
+			break;
+		case CLICK_CANCEL:
+			alertWindow.dismiss();
+			break;
+
+		default:
+			throw new ActionException("Invalid Action");
+		}
+
 	}
 
 	public static void action(Action action, Option option, int value, WebElement element)
