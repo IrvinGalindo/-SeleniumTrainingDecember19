@@ -19,7 +19,7 @@ import utilities.Wait;
 
 public class Cmp_RegisterModule {
 
-	public static void execute(User_ScrumMetrics user) throws NoSuchElementException, ActionException, IOException, AWTException {
+	public static void start(User_ScrumMetrics user) throws NoSuchElementException, ActionException, IOException, AWTException {
 
 		Cmp_RegisterOptionNavbar.start();
 
