@@ -8,11 +8,11 @@ import utilities.Find;
 public class Scrum_Metrics_Login {
 
 	public static WebElement txt_Username() {
-		return Find.element(LocatorType.XPATH, "//input[@id='mat-input-0']");
+		return Find.element(LocatorType.XPATH, "//input[@name='inUser']");
 	}
 
 	public static WebElement txt_Password() {
-		return Find.element(LocatorType.XPATH, "//input[@id='mat-input-1']");
+		return Find.element(LocatorType.XPATH, "//input[@name='inPass']");
 	}
 
 	public static WebElement btn_Login() {
