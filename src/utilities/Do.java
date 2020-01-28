@@ -43,14 +43,17 @@ public class Do {
 		switch (action) {
 		case REFRESH:
 			driver.navigate().refresh();
+			Do.action(Action.TAKESCREENSHOT);
 			break;
 
 		case FORWARD:
 			driver.navigate().forward();
+			Do.action(Action.TAKESCREENSHOT);
 			break;
 
 		case BACK:
 			driver.navigate().back();
+			Do.action(Action.TAKESCREENSHOT);
 			break;
 
 		case TAKESCREENSHOT:
