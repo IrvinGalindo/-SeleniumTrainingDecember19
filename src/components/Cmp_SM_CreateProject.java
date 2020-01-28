@@ -4,10 +4,9 @@ import java.awt.AWTException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
 import org.openqa.selenium.WebElement;
-
 import enums.Action;
+import enums.Alerts;
 import enums.BotKey;
 import enums.Expected;
 import enums.Option;
@@ -80,6 +79,11 @@ public class Cmp_SM_CreateProject {
 
 		TestCase.initializeStep("Clic en el boton Create");
 		Do.action(Action.CLICK, Scrum_Metrics_Project.btn_Create());
+		TestCase.step();
+		
+		Wait.implicit(5);
+		TestCase.initializeStep("Verificar que el mensaje en alerta sea User created");
+		Do.action(Alerts.CLICK_ACCEPT);
 		TestCase.step();
 
 	}
