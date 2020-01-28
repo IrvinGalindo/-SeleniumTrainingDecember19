@@ -89,4 +89,8 @@ public class Scrum_Metrics_Project {
 		return Find.elements(LocatorType.XPATH, "//mat-action-row[@class='mat-action-row ng-star-inserted']");
 	}
 
+	public static WebElement lbl_Project(String projectToSearch) {
+		return Find.element(LocatorType.XPATH, "//mat-panel-title[contains(text(),'" + projectToSearch + "')]");
+	}
+
 }
