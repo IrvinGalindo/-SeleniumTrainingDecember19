@@ -23,10 +23,6 @@ public class Cmp_SM_CreateProject {
 
 	public static void start(Project project) throws ActionException, IOException, InterruptedException, AWTException {
 
-		TestCase.initializeStep("Clic en New Project");
-		Do.action(Action.CLICK, Scrum_Metrics_Project.lnk_CreateNewProject());
-		TestCase.step();
-
 		TestCase.initializeStep("Escribir el nombre del proyecto");
 		Do.action(Action.TYPE, project.getNombreproyecto(), Scrum_Metrics_Project.txt_ProjectName());
 		TestCase.step();
