@@ -5,11 +5,9 @@ import java.io.IOException;
 import enums.Action;
 import exceptions.ActionException;
 import pages.Scrum_Metrics_Login;
-import pages.Scrum_Metrics_Navbar;
 import pojos.User_ScrumMetrics;
 import utilities.Do;
 import utilities.TestCase;
-import utilities.Wait;
 
 public class Cmp_SM_Login {
 
