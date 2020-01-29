@@ -93,4 +93,19 @@ public class Scrum_Metrics_Project {
 		return Find.element(LocatorType.XPATH, "//mat-panel-title[contains(text(),'" + projectToSearch + "')]");
 	}
 
+	public static List<WebElement> lbl_Projects() {
+		return Find.elements(LocatorType.XPATH,
+				"//span[@class='mat-content']");
+	}
+
+	public static WebElement btn_OpenProject(int indexPosition) {
+		return Find.element(LocatorType.XPATH,
+				"(//div[@class='mat-expansion-panel-content ng-trigger ng-trigger-bodyExpansion']//button)["
+						+ indexPosition + "]");
+	}
+	
+	public static WebElement lbl_details(int indexPosition) {
+		return Find.element(LocatorType.XPATH,
+				"(//div[@class='mat-expansion-panel-body']/div)[" + indexPosition + "]");
+	}
 }

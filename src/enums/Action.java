@@ -12,5 +12,5 @@ public enum Action {
 		VERIFY_IF_EXIST,
 		SELECT,
 		MOUSE,
-		TAKESCREENSHOT,
+		TAKE_SCREENSHOT,
 }

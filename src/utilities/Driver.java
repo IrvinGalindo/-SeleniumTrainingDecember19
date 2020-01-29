@@ -39,7 +39,7 @@ public class Driver {
 	}
 
 	public static void close() {
-		driver.quit();
+		driver.close();
 	}
 
 }

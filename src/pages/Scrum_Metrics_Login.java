@@ -39,4 +39,8 @@ public class Scrum_Metrics_Login {
 		return Find.element(LocatorType.XPATH, "");
 	}
 	
+	public static WebElement lbl_Login() {
+		return Find.element(LocatorType.CSSSELECTOR, "div#outer-div>div>h1");
+	}
+	
 }

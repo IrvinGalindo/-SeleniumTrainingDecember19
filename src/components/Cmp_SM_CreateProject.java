@@ -82,7 +82,7 @@ public class Cmp_SM_CreateProject {
 		TestCase.step();
 		
 		Wait.implicit(5);
-		TestCase.initializeStep("Verificar que el mensaje en alerta sea User created");
+		TestCase.initializeStep("Verificar que el mensaje en alerta sea Project created");
 		Do.action(Alerts.CLICK_ACCEPT);
 		TestCase.step();
 

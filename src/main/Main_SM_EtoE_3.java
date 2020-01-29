@@ -5,22 +5,23 @@ import java.io.IOException;
 import enums.Action;
 import enums.Browser;
 import exceptions.ActionException;
-import testCases.BuyAnEveningDress;
-import utilities.TestCase;
+import testCases.EtoE_OpenProject;
 import utilities.Do;
 import utilities.Driver;
+import utilities.TestCase;
 
-public class Main {
+public class Main_SM_EtoE_3 {
+	
+	public static void main(String []args) throws ActionException, IOException {
 
-	public static void main(String args[]) throws ActionException, IOException {
 		Driver.open(Browser.CHROME);
 		try {
-			TestCase.start(BuyAnEveningDress.class.getSimpleName());
-			BuyAnEveningDress.execute();
+			TestCase.start(EtoE_OpenProject.class.getSimpleName());
+			EtoE_OpenProject.execute("EjemploPO");
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			TestCase.status = false;
-			Do.action(Action.TAKESCREENSHOT);
+			Do.action(Action.TAKE_SCREENSHOT);
 			TestCase.step();
 			return;
 		} finally {

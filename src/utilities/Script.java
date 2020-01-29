@@ -14,7 +14,7 @@ public class Script {
 	public static void highlight(WebElement element) throws ActionException, IOException {
 		String border = "#f00 solid 5px";
 		js.executeScript("arguments[0].style.outline = '" + border + "'; ", element);
-		Do.action(Action.TAKESCREENSHOT);
+		Do.action(Action.TAKE_SCREENSHOT);
 	}
 
 	public static void withoutHighlight(WebElement element) {
@@ -24,5 +24,9 @@ public class Script {
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block e.printStackTrace();
 		}
+	}
+	
+	public static void scroll(WebElement element) {
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
 	}
 }

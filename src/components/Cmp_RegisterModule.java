@@ -8,12 +8,11 @@ import org.openqa.selenium.NoSuchElementException;
 import enums.Action;
 import enums.Alerts;
 import enums.Expected;
-import enums.LocatorType;
 import exceptions.ActionException;
+import pages.Scrum_Metrics_Login;
 import pages.Scrum_Metrics_Register;
 import pojos.User_ScrumMetrics;
 import utilities.Do;
-import utilities.Find;
 import utilities.TestCase;
 import utilities.Wait;
 
@@ -58,9 +57,9 @@ public class Cmp_RegisterModule {
 			Do.action(Alerts.CLICK_ACCEPT);
 			TestCase.step();
 
-			Wait.Explicit(Expected.VISIBILITY_OF, 10, Find.element(LocatorType.CSSSELECTOR, "div#outer-div>div>h1"));
+			Wait.Explicit(Expected.VISIBILITY_OF, 10, Scrum_Metrics_Login.lbl_Login());
 			TestCase.initializeStep("Verificar que la pagina te redirija al modulo de inicio de sesion");
-			Do.action(Action.CLICK, Find.element(LocatorType.CSSSELECTOR, "div#outer-div>div>h1"));
+			Do.action(Action.CLICK, Scrum_Metrics_Login.lbl_Login());
 			TestCase.step();
 
 		} else {

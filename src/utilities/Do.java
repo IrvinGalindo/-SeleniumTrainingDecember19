@@ -31,7 +31,7 @@ public class Do {
 				value = "https://" + value;
 				driver.navigate().to(value);
 			}
-			Do.action(Action.TAKESCREENSHOT);
+			Do.action(Action.TAKE_SCREENSHOT);
 			break;
 
 		default:
@@ -43,20 +43,20 @@ public class Do {
 		switch (action) {
 		case REFRESH:
 			driver.navigate().refresh();
-			Do.action(Action.TAKESCREENSHOT);
+			Do.action(Action.TAKE_SCREENSHOT);
 			break;
 
 		case FORWARD:
 			driver.navigate().forward();
-			Do.action(Action.TAKESCREENSHOT);
+			Do.action(Action.TAKE_SCREENSHOT);
 			break;
 
 		case BACK:
 			driver.navigate().back();
-			Do.action(Action.TAKESCREENSHOT);
+			Do.action(Action.TAKE_SCREENSHOT);
 			break;
 
-		case TAKESCREENSHOT:
+		case TAKE_SCREENSHOT:
 			TakesScreenshot scrShot = ((TakesScreenshot) driver);
 			File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
 			File DestFile = new File(TestCase.getImageUri());
@@ -130,6 +130,7 @@ public class Do {
 			case BY_INDEX:
 				Script.highlight(element);
 				combo.selectByIndex(value);
+				Script.withoutHighlight(element);
 				break;
 			default:
 				throw new ActionException("Invalid Option");
@@ -147,10 +148,12 @@ public class Do {
 			case BY_VALUE:
 				Script.highlight(element);
 				combo.selectByValue(value);
+				Script.withoutHighlight(element);
 				break;
 			case BY_VISIBLE_TEXT:
 				Script.highlight(element);
 				combo.selectByVisibleText(value);
+				Script.withoutHighlight(element);
 				break;
 			default:
 				throw new ActionException("Invalid Option");

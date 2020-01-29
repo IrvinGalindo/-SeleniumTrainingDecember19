@@ -7,6 +7,7 @@ import java.util.HashMap;
 import components.Cmp_RegisterModule;
 import components.Cmp_SM_CreateProject;
 import components.Cmp_SM_Login;
+import components.Cmp_SM_SignOut;
 import enums.Action;
 import exceptions.ActionException;
 import pages.Scrum_Metrics_Project;
@@ -21,11 +22,12 @@ public class EndToEnd_ScrumMetrics_1 {
 
 	public static void execute() throws ActionException, IOException, InterruptedException, AWTException {
 
-		Cmp_RegisterModule
-				.start(new User_ScrumMetrics("OldBran", "contra123", "Brandon Medina Urbina", "OldBran@gmail.com"));
+		User_ScrumMetrics user = new User_ScrumMetrics("John", "Contra12*", "John Smith",
+				"jsmith@demo.com");
+		Cmp_RegisterModule.start(user);
 		Wait.implicit(5);
 		TestCase.isSubComp = true;
-		Cmp_SM_Login.start(new User_ScrumMetrics("OldBran", "contra123"));
+		Cmp_SM_Login.start(new User_ScrumMetrics(user.getUsername(), user.getPassword()));
 		TestCase.isSubComp = false;
 
 		TestCase.initializeStep("Clic en New Project");
@@ -33,11 +35,12 @@ public class EndToEnd_ScrumMetrics_1 {
 		TestCase.step();
 
 		HashMap<String, String> hashMap = new HashMap<String, String>();
-		hashMap.put("Scrum Master", "OldBran");
+		hashMap.put("Scrum Master", user.getUsername());
 		hashMap.put("Product Owner", "IRGAL");
 		hashMap.put("Team Member", "jarasdeboy");
+		hashMap.put("Team Member", "araceli");
 
-		Project project = new Project("EtoEPruebaOne", "Descripcion", "C:\\Users\\Training\\Desktop\\Koala.jpg",
+		Project project = new Project("Demo", "this is a demo project", "C:\\Users\\Training\\Desktop\\hexaware-technologies-vector-logo.png",
 				hashMap, "1 January 2020", "31 January 2020");
 
 		TestCase.isSubComp = true;
@@ -62,14 +65,9 @@ public class EndToEnd_ScrumMetrics_1 {
 		Do.action(Action.VERIFY_IF_EXIST, Scrum_Metrics_Project.lbl_Project(project.getNombreproyecto()));
 		TestCase.step();
 
-		TestCase.initializeStep("Clic en el menu izquierdo");
-		Do.action(Action.CLICK, Scrum_Metrics_Submenu.mnu_Menu());
-		TestCase.step();
-
-		Wait.implicit(5);
-		TestCase.initializeStep("Clic en Sign Out");
-		Do.action(Action.CLICK, Scrum_Metrics_Submenu.mnu_SignOut());
-		TestCase.step();
+		TestCase.isSubComp = true;
+		Cmp_SM_SignOut.start();
+		TestCase.isSubComp = false;
 
 	}
 }
